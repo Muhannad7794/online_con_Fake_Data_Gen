@@ -1,0 +1,9 @@
+Server=tcp:myql-assignments-srver.database.windows.net,1433;Initial 
+Catalog=addresses;
+Persist Security Info=False;
+User ID={your_username};
+Password={your_password};
+MultipleActiveResultSets=False;
+Encrypt=True;
+TrustServerCertificate=False;
+Authentication="Active Directory Password";

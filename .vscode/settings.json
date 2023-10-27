@@ -1,0 +1,8 @@
+{
+    "python.autoComplete.extraPaths": [
+        "C:/Muhannad_data/Studying/Projects/Fake_Data_Generator/app_code"
+    ],
+    "python.analysis.extraPaths": [
+        "C:/Muhannad_data/Studying/Projects/Fake_Data_Generator/app_code"
+    ]
+}
