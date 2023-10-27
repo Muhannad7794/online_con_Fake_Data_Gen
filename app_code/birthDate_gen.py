@@ -10,5 +10,5 @@ def generate_random_birthdate():
     return birht_date
 
 
-birthday = generate_random_birthdate()
-print(birthday)
+# birthday = generate_random_birthdate()
+# print(birthday)
