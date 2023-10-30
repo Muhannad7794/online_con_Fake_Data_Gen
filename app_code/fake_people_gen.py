@@ -17,7 +17,7 @@ def generate_multiple_fake_persons(number_of_persons):
     return fake_persons
 
 
-people_count = ['not an int', -1, 0, 4, 101]
+people_count = ['not an int', -1, 0, 101, 4, 10]
 
 for count in people_count:
     try:
