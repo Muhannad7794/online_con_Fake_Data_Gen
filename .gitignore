@@ -1,8 +1,6 @@
 private/
-coding/__pycache__/
-testing/__pycache__/
+app_code/__pycache__/
+test_code/__pycache__/
 .pytest_cache
 .vscode/
-coding/__init__.py
-testing__init__.py
-integration_testing/__pycache__/
+intgr_test_code/__pycache__/
