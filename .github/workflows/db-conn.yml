@@ -1,0 +1,14 @@
+name: Check Database Accessibility
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test_db_connection:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test Database Connection
+        run: python -c "import pyodbc; pyodbc.connect('DRIVER={ODBC Driver 18 for SQL Server};Server=tcp:kea-projects-sql-server.database.windows.net,1433;Database=addresses_main;Uid=mual_sql_admin;Pwd=m.u.a.l_KEA_server_access;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')"
