@@ -19,7 +19,7 @@ jobs:
         run: source .env
 
       - name: Show environment variables
-        run: echo "JSON_FILE_PATH is $JSON_FILE_PATH"
+        run: echo "JSON_FILE_PATH is $.env.JSON_FILE_PATH"
 
       - name: Run person_gen.py
         run: python app_code/person_gen.py
