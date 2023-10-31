@@ -1,4 +1,4 @@
-name: Set JSON file path
+name: env-vars
 
 on:
   push:
@@ -15,5 +15,11 @@ jobs:
         with:
           python-version: 3.11.4
 
-      - name: Set JSON file path
-        run: echo "::set-env name=JSON_FILE_PATH::C:/Muhannad_data/Studying/Projects/Fake_Data_Generator/sorce_data/person-names.json"
+      - name: Load environment variables
+        run: source .env
+
+      - name: Show environment variables
+        run: echo "JSON_FILE_PATH is $JSON_FILE_PATH"
+
+      - name: Run person_gen.py
+        run: python app_code/person_gen.py
