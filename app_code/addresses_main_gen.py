@@ -1,36 +1,28 @@
 import pyodbc
+import os
 from random import choice, randint
-
 
 def generate_random_address():
     def generate_random_zipCode():
-        # Define the connection string
-        server = 'kea-projects-sql-server'
-        database = 'addresses_main'
-        username = 'mual_sql_admin'
-        password = 'm.u.a.l_KEA_server_access'
-        # Use the appropriate driver
-        driver = '{ODBC Driver 18 for SQL Server}'
+        if os.environ.get('GITHUB_ACTIONS') == 'true':
+            conn_str = 'DRIVER={ODBC Driver 17 for SQL Server};Server=tcp:kea-projects-sql-server.database.windows.net,1433;Database=addresses_main;Uid=mual_sql_admin;Pwd=m.u.a.l_KEA_server_access;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;'
+        else:
+            server = 'kea-projects-sql-server'
+            database = 'addresses_main'
+            username = 'mual_sql_admin'
+            password = 'm.u.a.l_KEA_server_access'
+            conn_str = 'DRIVER={ODBC Driver 18 for SQL Server};Server=tcp:kea-projects-sql-server.database.windows.net,1433;Database=addresses_main;Uid=mual_sql_admin;Pwd=m.u.a.l_KEA_server_access;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;'
 
-        # Create the connection string
-        conn_str = 'DRIVER={ODBC Driver 18 for SQL Server};Server=tcp:kea-projects-sql-server.database.windows.net,1433;Database=addresses_main;Uid=mual_sql_admin;Pwd=m.u.a.l_KEA_server_access;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;'
-
-        # Establish the connection
         conn = pyodbc.connect(conn_str)
-
-        # Create a cursor from the connection
         cursor = conn.cursor()
-
-        # Now you can execute SQL queries
-        # Replace with your actual table name
         cursor.execute('SELECT * FROM postal_code')
-
-        # Fetch rows from the last executed query
         all_codes = cursor.fetchall()
         random_code = choice(all_codes)
         cursor.close()
         conn.close()
         return random_code
+
+
 
     zip_code = generate_random_zipCode()
 
@@ -67,5 +59,5 @@ def generate_random_address():
     return address
 
 
-# random_address = generate_random_address()
-# print(random_address)
+random_address = generate_random_address()
+print(random_address)

@@ -1,6 +1,6 @@
 from .person_basic_info import person_basic_info_formatted
-from .addresses_gen import generate_random_address
-#from .addresses_main_gen import generate_random_address
+#from .addresses_gen import generate_random_address
+from .addresses_main_gen import generate_random_address
 from .phone_num_gen import generate_random_phone_number
 
 
