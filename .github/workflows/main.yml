@@ -1,0 +1,43 @@
+name: CI Tests
+
+on:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["pypy3.9", "pypy3.10", "3.9", "3.10", "3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+          pip install pyodbc
+          pip insall json
+
+      - name: Display Python version
+        run: python -c "import sys; print(sys.version)"
+
+      - name: Run the app with python
+        run: |
+          python app_code
+
+      - name: Test with pytest
+        run: |
+          pytest test_code
+
+      - name: Run integration tests
+        run: |
+          pytest intgr_test_code
