@@ -20,5 +20,5 @@ def generate_random_person():
         return name, surname, gender
 
 
-# person_1 = generate_random_person()
-# print(person_1)
+person_1 = generate_random_person()
+print(person_1)
