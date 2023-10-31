@@ -1,0 +1,19 @@
+name: Set JSON file path
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  set_json_path:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11.4
+
+      - name: Set JSON file path
+        run: echo "::set-env name=JSON_FILE_PATH::C:/Muhannad_data/Studying/Projects/Fake_Data_Generator/sorce_data/person-names.json"
