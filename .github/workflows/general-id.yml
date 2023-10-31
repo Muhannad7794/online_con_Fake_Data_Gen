@@ -22,7 +22,30 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install pytest
+          pip install pytest-cov
+          pip install pytest-mock
+          pip install pytest-xdist
+          pip install pytest-azurepipelines
+          pip install pytest-json-report
+          pip install pytest-json-reporter
+          pip install pytest-html
+          pip install pytest-rerunfailures
+          pip install pytest-timeout
+          pip install pytest-dependency
+          pip install pytest-ordering
+          pip install pytest-forked
+          pip install pytest-parallel
+          pip install pytest-xdist
+          pip install pytest-azurepipelines
+          pip install pytest-asyncio
+          pip install pytest-asyncio-network-simulator
+          pip install pytest-asyncio-threading
+          pip install pytest-asyncio-executor
+          pip install pytest-asyncio-redis
           pip install pyodbc  # Add pyodbc
+          pip install azure-storage-blob  # Add azure-storage-blob
+          pip install json # Add json
+          pip install jsonschema # Add jsonschema
 
       - name: Run unit tests
         run: pytest test_code
