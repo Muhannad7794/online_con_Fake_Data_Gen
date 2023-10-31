@@ -6,7 +6,7 @@ from random import choice
 
 def generate_random_person():
     try:
-        with open('C:\\Muhannad_data\\Studying\\Projects\\Fake_Data_Generator\\sorce_data\\person-names.json', encoding='utf-8-sig') as persons_data:
+        with open('C:/Muhannad_data/Studying/Projects/Fake_Data_Generator/sorce_data/person-names.json', encoding='utf-8-sig') as persons_data:
             data = json.load(persons_data)
             persons = data['persons']
             random_person = choice(persons)

@@ -59,5 +59,5 @@ def generate_random_address():
     return address
 
 
-random_address = generate_random_address()
-print(random_address)
+# random_address = generate_random_address()
+# print(random_address)
