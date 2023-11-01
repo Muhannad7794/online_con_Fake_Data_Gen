@@ -11,7 +11,7 @@ def generate_random_address():
             database = 'addresses_main'
             username = 'mual_sql_admin'
             password = 'm.u.a.l_KEA_server_access'
-            conn_str = 'DRIVER={ODBC Driver 18 for SQL Server};Server=tcp:kea-projects-sql-server.database.windows.net,1433;Database=addresses_main;Uid=mual_sql_admin;Pwd=m.u.a.l_KEA_server_access;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;'
+            conn_str = 'Driver={ODBC Driver 18 for SQL Server};Server=tcp:kea-projects-sql-server.database.windows.net,1433;Database=addresses_main;Uid=mual_sql_admin;Pwd=mual_sql_admin;Pwd=m.u.a.l_KEA_server_access;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;'
 
         conn = pyodbc.connect(conn_str)
         cursor = conn.cursor()
