@@ -1,7 +1,6 @@
 import pyodbc
-from app_code.addresses_main_gen import generate_random_address
 
-def test_integration_generate_random_address():
+def test_integration_generate_random_person():
     try:
         # Arrange: Set up connection parameters
         server = 'your_server_name'
@@ -10,13 +9,13 @@ def test_integration_generate_random_address():
         password = 'your_password'
         conn_str = f'Driver={{ODBC Driver 18 for SQL Server}};' \
                    f'Server=tcp:kea-projects-sql-server.database.windows.net;' \
-                   f'Database=addresses_main;Uid=mual_sql_admin;Pwd=m.u.a.l_KEA_server_access;' \
+                   f'Database=people;Uid=mual_sql_admin;Pwd=m.u.a.l_KEA_server_access;' \
                    f'Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;'
 
         # Act: Test connection and data retrieval
         with pyodbc.connect(conn_str) as conn:
             cursor = conn.cursor()
-            cursor.execute('SELECT * FROM postal_code')  
+            cursor.execute('SELECT * FROM persons')  
 
             # Assert: Verify data retrieval
             rows = cursor.fetchall()
