@@ -1,4 +1,4 @@
-name: Addresses Database Connectivity Test
+name: people Database Connectivity Test
 
 on: [push]
 
@@ -22,4 +22,4 @@ jobs:
 
       - name: Test Database Connectivity
         run: |
-          python -c "import pyodbc; pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};Server=tcp:kea-projects-sql-server.database.windows.net,1433;Database=addresses_main;Uid=mual_sql_admin;Pwd=m.u.a.l_KEA_server_access;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')"
+          python -c "import pyodbc; pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};Server=tcp:kea-projects-sql-server.database.windows.net,1433;Database=people;Uid=mual_sql_admin;Pwd=m.u.a.l_KEA_server_access;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')"
