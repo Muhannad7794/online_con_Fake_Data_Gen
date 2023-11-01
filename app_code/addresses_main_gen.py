@@ -58,6 +58,9 @@ def generate_random_address():
     )
     return address
 
+address = generate_random_address()
+print(address)
 
-# random_address = generate_random_address()
-# print(random_address)
+
+
+
